@@ -1,15 +1,20 @@
-/* ===== GHIA - Unified CSS ===== */
+/* =========================================================
+   GHIA – VARIABLES GLOBALES
+   ========================================================= */
 :root {
     --ghia-primary: #6B21A8;
     --ghia-secondary: #F97316;
     --ghia-accent: #FBBF24;
 
-    /* RUTAS CORRECTAS DESDE /css/styles.css → /assets/img */
+    /* Rutas desde /css/styles.css */
     --ghia-bg-hero: url('../assets/img/bg.jpg');
     --ghia-report-1: url('../assets/img/demo-01.jpg');
     --ghia-report-2: url('../assets/img/demo-02.jpg');
 }
 
+/* =========================================================
+   BASE / RESET
+   ========================================================= */
 html,
 body {
     height: 100%;
@@ -18,37 +23,147 @@ body {
     color: #111;
 }
 
-/* Parallax & Hero */
+/* =========================================================
+   NAV / HEADER
+   ========================================================= */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--ghia-accent);
+    transition: width 0.25s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--ghia-accent);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Header blur base */
+#ghia-header>div {
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    background: rgba(255, 255, 255, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Header al scrollear */
+.scrolled-header {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   HERO + PARALLAX
+   ========================================================= */
 .hero-bg {
     background-image: var(--ghia-bg-hero);
     background-position: center;
     background-size: cover;
+    min-height: 70vh;
+}
+
+@media (min-width: 1024px) {
+    .hero-bg {
+        min-height: 90vh;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
 }
 
 .parallax-bg {
     background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+}
+
+/* =========================================================
+   REPORT CARDS – BLUR + SHINE + GLASS REFLECTION
+   ========================================================= */
+.report-card {
+    position: relative;
+    min-height: 380px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 22px;
+    overflow: hidden;
+    
+    /* Efecto vidrio */
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+}
+
+/* Capa de glass sobre la imagen */
+.report-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.10);
+    pointer-events: none;
+}
+
+/* SHINE / REFLECTION diagonal */
+.report-card::after {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -40%;
+    width: 60%;
+    height: 260%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: shineMove 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shineMove {
+    0% {
+        transform: translateX(-180%) skewX(-20deg);
+    }
+    100% {
+        transform: translateX(180%) skewX(-20deg);
+    }
+}
+
+/* Imagen 1 */
 .report-img-1 {
     background-image: var(--ghia-report-1);
-    min-height: 380px !important;
-    width: 100%;
-    display: block;
-    background-size: cover;
-    background-position: center;
 }
 
+/* Imagen 2 */
 .report-img-2 {
     background-image: var(--ghia-report-2);
-    min-height: 380px !important;
-    width: 100%;
-    display: block;
-    background-size: cover;
-    background-position: center;
 }
 
-
-/* Fade-in / reveal */
+/* =========================================================
+   FADE / REVEAL ANIMATIONS
+   ========================================================= */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -71,7 +186,9 @@ body {
     transition: .8s cubic-bezier(.2, .9, .2, 1);
 }
 
-/* Glass effect */
+/* =========================================================
+   GLASSMORPHISM
+   ========================================================= */
 .glass-card {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(14px);
@@ -80,14 +197,15 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Glass footer */
 .glass-footer {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
     color: #fff;
 }
 
-/* Buttons */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 .btn-primary {
     background: linear-gradient(90deg, var(--ghia-accent), var(--ghia-secondary));
     padding: .8rem 1.3rem;
@@ -104,7 +222,9 @@ body {
     border: 1px solid #ccc;
 }
 
-/* Shine */
+/* =========================================================
+   SHINE EFFECT
+   ========================================================= */
 .shine-effect {
     position: relative;
     overflow: hidden;
@@ -122,25 +242,6 @@ body {
     animation: shine 4s linear infinite;
 }
 
-.report-img-1 {
-    background-image: var(--ghia-report-1);
-    min-height: 380px !important;
-    width: 100%;
-    display: block;
-    background-size: cover;
-    background-position: center;
-}
-
-.report-img-2 {
-    background-image: var(--ghia-report-2);
-    min-height: 380px !important;
-    width: 100%;
-    display: block;
-    background-size: cover;
-    background-position: center;
-}
-
-
 @keyframes shine {
     0% {
         transform: translateX(-200%) skewX(-20deg);
@@ -151,15 +252,10 @@ body {
     }
 }
 
-/* Stats */
+/* =========================================================
+   STATS
+   ========================================================= */
 .stat-number {
     font-size: 2.4rem;
     font-weight: 800;
-}
-
-/* Mobile parallax fix */
-@media (max-width: 768px) {
-    .parallax-bg {
-        background-attachment: scroll;
-    }
 }
