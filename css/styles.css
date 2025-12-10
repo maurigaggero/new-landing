@@ -103,7 +103,6 @@ body {
 .report-card {
     position: relative;
     min-height: 480px;
-    /* MÁS GRANDE */
     border-radius: 18px;
     background-size: cover;
     background-position: center;
