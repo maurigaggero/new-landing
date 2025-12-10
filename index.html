@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Ghia - Landing</title>
+
+    <!-- Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+    <!-- CSS de la Landing -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full z-50 bg-transparent">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">Ghia</h1>
+            <nav class="hidden md:flex space-x-6 text-lg text-gray-900">
+                <a href="#features" class="hover:text-yellow-300 transition">Features</a>
+                <a href="#benefits" class="hover:text-yellow-300 transition">Beneficios</a>
+                <a href="#cta" class="hover:text-yellow-300 transition">Comenzar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-bg parallax-bg fade-in pt-32 pb-32">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="glass-card mx-auto max-w-4xl text-gray-900 shadow-lg shine-effect p-10">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Tu Auto. Tu Información. Siempre a Mano.</h2>
+                <p class="text-lg md:text-xl opacity-90 mb-6">
+                    La forma más profesional y simple de gestionar verificaciones, historial y mantenimiento vehicular.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a class="btn-primary" href="#cta">Crear Cuenta</a>
+                    <a class="btn-secondary" href="#features">Ver features</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="fade-in py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Features Principales</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-anim glass-card reveal p-6">
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Verificaciones Pro</h4>
+                    <p class="text-gray-700">Reportes profesionales con fotos y checklist completo.</p>
+                </div>
+                <div class="card-anim glass-card reveal p-6">
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Historial Disponible</h4>
+                    <p class="text-gray-700">Toda la información del vehículo organizada en un solo lugar.</p>
+                </div>
+                <div class="card-anim glass-card reveal p-6">
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Gestión Completa</h4>
+                    <p class="text-gray-700">Ideal para verificadores y pequeños equipos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="benefits" class="fade-in py-16">
+        <div class="max-w-6xl mx-auto px-6 text-gray-900 text-center">
+            <h3 class="text-3xl font-bold mb-8">Por qué elegir Ghia</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-6">
+                    <div class="stat-number counter" data-target="1200">0</div>
+                    <div class="opacity-80 mt-2">Verificaciones realizadas</div>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="stat-number counter" data-target="98">0</div>
+                    <div class="opacity-80 mt-2">Satisfacción (%)</div>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="stat-number counter" data-target="350">0</div>
+                    <div class="opacity-80 mt-2">Reportes generados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REPORTS MOCKUP -->
+    <section class="fade-in py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">Ejemplos de reportes</h3>
+            <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
+                <div class="w-full md:w-1/3 glass-card shine-effect report-img-1"></div>
+                <div class="w-full md:w-1/3 glass-card shine-effect report-img-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="fade-in py-20 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">¿Listo para usar Ghia?</h3>
+            <p class="text-lg text-gray-700 mb-6">Empezá gratis y descubrí lo simple que puede ser la gestión vehicular.</p>
+            <a class="btn-primary" href="#">Comenzar Gratis</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 py-12 glass-footer">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-left">
+            <div>
+                <h3 class="text-2xl font-bold">Ghia</h3>
+                <p class="opacity-80 mt-2">Gestión vehicular profesional, simple y confiable.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-3">Producto</h4>
+                <ul class="space-y-2 opacity-80 text-sm">
+                    <li><a href="#">Características</a></li>
+                    <li><a href="#">Planes</a></li>
+                    <li><a href="#">Integraciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-3">Compañía</h4>
+                <ul class="space-y-2 opacity-80 text-sm">
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Soporte</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 opacity-80 text-sm">
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-8 text-center opacity-60 text-sm">© 2025 Ghia. Todos los derechos reservados.</div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
