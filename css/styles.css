@@ -10,7 +10,8 @@
     --ghia-report-2: url('../assets/img/demo-02.jpg');
 }
 
-html, body {
+html,
+body {
     height: 100%;
     font-family: Inter, ui-sans-serif, system-ui, -apple-system;
     background: #ffffff;
@@ -30,23 +31,45 @@ html, body {
 
 .report-img-1 {
     background-image: var(--ghia-report-1);
-    height: 300px;
+    min-height: 380px !important;
+    width: 100%;
+    display: block;
     background-size: cover;
     background-position: center;
 }
+
 .report-img-2 {
     background-image: var(--ghia-report-2);
-    height: 300px;
+    min-height: 380px !important;
+    width: 100%;
+    display: block;
     background-size: cover;
     background-position: center;
 }
 
-/* Fade-in / reveal */
-.fade-in { opacity: 0; transform: translateY(20px); transition: all .9s ease-out; }
-.fade-in-visible { opacity: 1; transform: none; }
 
-.reveal { opacity: 0; transform: translateY(15px); }
-.reveal-visible { opacity: 1; transform: none; transition: .8s cubic-bezier(.2,.9,.2,1); }
+/* Fade-in / reveal */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .9s ease-out;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: .8s cubic-bezier(.2, .9, .2, 1);
+}
 
 /* Glass effect */
 .glass-card {
@@ -54,12 +77,12 @@ html, body {
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Glass footer */
 .glass-footer {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(12px);
     color: #fff;
 }
@@ -71,8 +94,9 @@ html, body {
     border-radius: 12px;
     color: #111;
     font-weight: 700;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
+
 .btn-secondary {
     padding: .8rem 1.3rem;
     border-radius: 12px;
@@ -85,6 +109,7 @@ html, body {
     position: relative;
     overflow: hidden;
 }
+
 .shine-effect::after {
     content: "";
     position: absolute;
@@ -92,7 +117,7 @@ html, body {
     left: -40%;
     width: 40%;
     height: 240%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transform: skewX(-20deg);
     animation: shine 4s linear infinite;
 }
@@ -117,8 +142,13 @@ html, body {
 
 
 @keyframes shine {
-    0%   { transform: translateX(-200%) skewX(-20deg); }
-    100% { transform: translateX(200%) skewX(-20deg); }
+    0% {
+        transform: translateX(-200%) skewX(-20deg);
+    }
+
+    100% {
+        transform: translateX(200%) skewX(-20deg);
+    }
 }
 
 /* Stats */
@@ -129,5 +159,7 @@ html, body {
 
 /* Mobile parallax fix */
 @media (max-width: 768px) {
-    .parallax-bg { background-attachment: scroll; }
+    .parallax-bg {
+        background-attachment: scroll;
+    }
 }
