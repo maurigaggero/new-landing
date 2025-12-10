@@ -96,6 +96,26 @@ html, body {
     transform: skewX(-20deg);
     animation: shine 4s linear infinite;
 }
+
+.report-img-1 {
+    background-image: var(--ghia-report-1);
+    min-height: 380px !important;
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+}
+
+.report-img-2 {
+    background-image: var(--ghia-report-2);
+    min-height: 380px !important;
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+}
+
+
 @keyframes shine {
     0%   { transform: translateX(-200%) skewX(-20deg); }
     100% { transform: translateX(200%) skewX(-20deg); }
