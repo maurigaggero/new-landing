@@ -102,50 +102,42 @@ body {
    ========================================================= */
 .report-card {
     position: relative;
-    min-height: 380px;
-    width: 100%;
+    min-height: 480px;
+    /* MÁS GRANDE */
+    border-radius: 18px;
     background-size: cover;
     background-position: center;
-    border-radius: 22px;
     overflow: hidden;
-    
-    /* Efecto vidrio */
-    backdrop-filter: blur(12px) saturate(140%);
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Capa de glass sobre la imagen */
-.report-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.10);
-    pointer-events: none;
+.report-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.22);
 }
 
-/* SHINE / REFLECTION diagonal */
-.report-card::after {
-    content: "";
+.report-label {
     position: absolute;
-    top: -120%;
-    left: -40%;
-    width: 60%;
-    height: 260%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.45),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: shineMove 5s ease-in-out infinite;
-    pointer-events: none;
+    top: 18px;
+    left: 18px;
+    background: rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+.report-label h4,
+.report-label p {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes shineMove {
     0% {
         transform: translateX(-180%) skewX(-20deg);
     }
+
     100% {
         transform: translateX(180%) skewX(-20deg);
     }
