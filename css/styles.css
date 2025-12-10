@@ -198,8 +198,8 @@ body {
 }
 
 .glass-footer {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
     color: #fff;
 }
 
