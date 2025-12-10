@@ -110,6 +110,19 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.report-card::after {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -50%;
+    width: 60%;
+    height: 300%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-20deg);
+    animation: shineMove 6s linear infinite;
+    pointer-events: none;
+}
+
 .report-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.22);
@@ -224,13 +237,13 @@ body {
 .shine-effect::after {
     content: "";
     position: absolute;
-    top: -120%;
-    left: -40%;
-    width: 40%;
-    height: 240%;
+    top: -150%;
+    left: -50%;
+    width: 60%;
+    height: 300%;
     background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transform: skewX(-20deg);
-    animation: shine 4s linear infinite;
+    animation: shine 5s linear infinite;
 }
 
 @keyframes shine {
