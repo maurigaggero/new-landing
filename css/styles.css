@@ -3,8 +3,8 @@
    ========================================================= */
 :root {
     --ghia-primary: #6B21A8;
-    --ghia-secondary: #F97316;
-    --ghia-accent: #FBBF24;
+    --ghia-secondary: #FAD08A;
+    --ghia-accent:    #FFF7EB;
 
     /* Rutas desde /css/styles.css */
     --ghia-bg-hero: url('../assets/img/bg.jpg');
@@ -211,20 +211,82 @@ body {
    BUTTONS
    ========================================================= */
 .btn-primary {
-    background: linear-gradient(90deg, var(--ghia-accent), var(--ghia-secondary));
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        90deg,
+        var(--ghia-accent),
+        var(--ghia-secondary)
+    );
+
     padding: .8rem 1.3rem;
     border-radius: 12px;
     color: #111;
     font-weight: 700;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+    transition:
+        transform .18s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+
+/* Sheen sutil (no se mueve, solo aparece) */
+.btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top left,
+        rgba(255, 255, 255, 0.45),
+        transparent 60%
+    );
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* Hover */
+.btn-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 10px 26px rgba(0, 0, 0, 0.25),
+        0 0 0 4px rgba(250, 208, 138, 0.28);
+}
+
+/* Active */
+.btn-primary:active {
+    transform: translateY(0);
+    filter: brightness(0.98);
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
 .btn-secondary {
     padding: .8rem 1.3rem;
     border-radius: 12px;
+    background: rgba(255,255,255,.7);
     color: #111;
     font-weight: 500;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+
+    box-shadow: inset 0 0 0 rgba(0,0,0,0);
+    transition:
+        box-shadow .25s ease,
+        transform .18s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        inset 0 0 0 2px rgba(250, 208, 138, .35),
+        0 6px 16px rgba(0,0,0,.12);
 }
 
 /* =========================================================
