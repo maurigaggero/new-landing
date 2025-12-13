@@ -2,7 +2,7 @@
    GHIA – VARIABLES GLOBALES
    ========================================================= */
 :root {
-    --ghia-primary: #6B21A8;
+    --ghia-primary: #e67a2e;
     --ghia-secondary: #FAD08A;
     --ghia-accent:    #FFF7EB;
 
@@ -39,12 +39,12 @@ body {
     bottom: 0;
     width: 0%;
     height: 2px;
-    background-color: var(--ghia-accent);
+    background-color: var(--ghia-primary);
     transition: width 0.25s ease-in-out;
 }
 
 .nav-link:hover {
-    color: var(--ghia-accent);
+    color: var(--ghia-primary);
 }
 
 .nav-link:hover::after {
