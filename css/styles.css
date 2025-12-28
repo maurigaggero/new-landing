@@ -102,12 +102,12 @@ body {
    ========================================================= */
 .report-card {
     position: relative;
-    min-height: 480px;
-    border-radius: 18px;
-    background-size: cover;
+    aspect-ratio: 9 / 16;
+    border-radius: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .report-card::after {
